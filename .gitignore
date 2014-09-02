@@ -1,4 +1,4 @@
-anode_modules
+node_modules
 npm-debug.log
 .DS_Store
 app/lib
