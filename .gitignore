@@ -5,3 +5,5 @@ app/lib
 dist
 
 app/stylesheets/main.css
+
+app/scripts/templates.js
