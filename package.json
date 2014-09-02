@@ -1,0 +1,23 @@
+{
+  "name": "pnp-anglais",
+  "version": "0.0.1",
+  "description": "AngularJS client app for pnp",
+  "author": "Franco Cedillo <franco.cedillo@gmail.com> http://adagio.github.io",
+  "keywords": [
+    "angular",
+    "webapp",
+    "boilerplate",
+    "gulp",
+    "javascript"
+  ],
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/HartasCuerdas/pnp-anglais/blob/master/LICENSE"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HartasCuerdas/pnp-anglais"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
