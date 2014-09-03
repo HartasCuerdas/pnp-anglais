@@ -1,14 +1,16 @@
-<table class="table weeks">
+<table class="table anglais-table">
   <thead>
-  	<th>id</th>
   	<th>firstDay</th>
-  	<th>comment</th>
+  	<th>oAVG</th>
+  	<th>dAVG</th>
+  	<th></th>
   </thead>
 	<tbody>
 	  <tr class="week" ng-repeat="week in weeklist.weeks">
-	    <td>{{ week.id }}</td>
-	    <td>{{ week.firstDay }}</td>
-	    <td>{{ week.comment }}</td>
+	    <td><a class="btn btn-default" href="{{week.id}}">{{ week.firstDay }}</a></td>
+	    <td>{{ week.oAVG | number: 1 }}</td>
+	    <td>{{ week.dAVG | number: 1 }}</td>
+	    <td><a href="wok/{{week.id}}">Destroy</a><button ng-click="destroy($index)">Delete</button></td>
 	  </tr>
   </tbody>
 </table>
