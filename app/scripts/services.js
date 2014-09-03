@@ -6,26 +6,25 @@
     .module('app.services', ['ngResource'])
     /*.constant('BaseUrl', 'http://jsonplaceholder.typicode.com')*/
     .constant('BaseUrl', 'http://localhost:3000')
+    .factory('Wok', Wok)
     .factory('Weeks', Weeks);
+
+
+  function Wok ($resource, BaseUrl) {
+    return $resource(BaseUrl + "/weeks/:id", { id: "@id" },
+    {
+      'create':  { method: 'POST' },
+      'index':   { method: 'GET', isArray: true },
+      'show':    { method: 'GET', isArray: false },
+      'update':  { method: 'PUT' },
+      'destroy': { method: 'DELETE' }
+    });
+  }
 
   /* @ngInject */
   function Weeks ($resource, BaseUrl) {
     return $resource(BaseUrl + '/weeks/:id.json',
       { id: '@_id' }
-    );
-  }
-
-  /* @ngInject */
-  function Comment ($resource, BaseUrl) {
-    return $resource(BaseUrl + '/comments/:commentId',
-      { commentId: '@_id' }
-    );
-  }
-
-  /* @ngInject */
-  function User ($resource, BaseUrl) {
-    return $resource(BaseUrl + '/users/:userId',
-      { userId: '@_id' }
     );
   }
 
