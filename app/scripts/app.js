@@ -13,13 +13,13 @@
     $routeProvider
       .when('/', {
         templateUrl: 'views/week-list.tpl.html',
-        controller: 'PostListCtrl',
-        controllerAs: 'postlist'
+        controller: 'WeekListCtrl',
+        controllerAs: 'weeklist'
       })
-      .when('/:postId', {
+      .when('/:id', {
         templateUrl: 'views/week-detail.tpl.html',
-        controller: 'PostDetailCtrl',
-        controllerAs: 'postdetail'
+        controller: 'WeekDetailCtrl',
+        controllerAs: 'weekdetail'
       });
   }
 

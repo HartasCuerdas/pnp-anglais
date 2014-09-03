@@ -4,15 +4,14 @@
   /* @ngInject */
   angular
     .module('app.services', ['ngResource'])
-    .constant('BaseUrl', 'http://jsonplaceholder.typicode.com')
-    .factory('Post', Post)
-    .factory('Comment', Comment)
-    .factory('User', User);
+    /*.constant('BaseUrl', 'http://jsonplaceholder.typicode.com')*/
+    .constant('BaseUrl', 'http://localhost:3000')
+    .factory('Weeks', Weeks);
 
   /* @ngInject */
-  function Post ($resource, BaseUrl) {
-    return $resource(BaseUrl + '/posts/:postId',
-      { postId: '@_id' }
+  function Weeks ($resource, BaseUrl) {
+    return $resource(BaseUrl + '/weeks/:id.json',
+      { id: '@_id' }
     );
   }
 

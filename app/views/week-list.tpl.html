@@ -1,5 +1,14 @@
-<ul class="blog-post-list">
-  <li class="blog-post-link" ng-repeat="post in postlist.posts">
-    <a ng-href="{{ post.id }}">{{ post.title }}</a>
-  </li>
-</ul>
+<table class="table weeks">
+  <thead>
+  	<th>id</th>
+  	<th>firstDay</th>
+  	<th>comment</th>
+  </thead>
+	<tbody>
+	  <tr class="week" ng-repeat="week in weeklist.weeks">
+	    <td>{{ week.id }}</td>
+	    <td>{{ week.firstDay }}</td>
+	    <td>{{ week.comment }}</td>
+	  </tr>
+  </tbody>
+</table>
