@@ -1,16 +1,16 @@
-<table class="table anglais-table">
+<table class="table npg-table">
   <thead>
-  	<th>firstDay</th>
-  	<th>oAVG</th>
-  	<th>dAVG</th>
-  	<th></th>
+    <th>firstDay</th>
+    <th>oAVG</th>
+    <th>dAVG</th>
+    <th></th>
   </thead>
-	<tbody>
-	  <tr class="week" ng-repeat="week in weeklist.weeks">
-	    <td><a class="btn btn-default" href="{{week.id}}">{{ week.firstDay }}</a></td>
-	    <td>{{ week.oAVG | number: 1 }}</td>
-	    <td>{{ week.dAVG | number: 1 }}</td>
-	    <td><a href="wok/{{week.id}}">Destroy</a><button ng-click="destroy($index)">Delete</button></td>
-	  </tr>
+  <tbody>
+    <tr ng-repeat="week in weeklist.weeks">
+      <td><a class="btn btn-default" href="{{week.id}}">{{ week.firstDay }}</a></td>
+      <td>{{ week.oAVG | number: 1 }}</td>
+      <td>{{ week.dAVG | number: 1 }}</td>
+      <td><a href="#">Destroy</a></td>
+    </tr>
   </tbody>
 </table>

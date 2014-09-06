@@ -1,28 +1,25 @@
-<article class="week">
-
 <a href="/" class="btn btn-primary">Back</a>
 
 <div>
-  id: {{ weekdetail.week.id }}
-</div>
-<div>
-  firstDay: {{ weekdetail.week.firstDay }}
+  <span>id: {{ weekdetail.week.id }}</span> | <span>firstDay: {{ weekdetail.week.firstDay }}</span>
 </div>
 <div>
   comment: {{ weekdetail.week.comment }}
 </div>
 
-<table class="table days-table">
+<table class="table ngp-table">
   <thead>
-    <th>id</th>
-    <th>firstDay</th>
-    <th>comment</th>
+    <th>Day</th>
+    <th>oTotal</th>
+    <th>dTotal</th>
+    <th>well registered</th>
   </thead>
   <tbody>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
+    <tr ng-repeat="day in weekdetail.days">
+      <td><a class="btn btn-default" href="day/{{day.id}}">{{ day.date }}</a></td>
+      <td>{{ day.oTotal }}</td>
+      <td>{{ day.dTotal }}</td>
+      <td>{{ day.well_registered }}</td>
     </tr>
   </tbody>
 </table>

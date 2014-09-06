@@ -1,0 +1,20 @@
+<a href="/" class="btn btn-primary">Back</a>
+
+<div>
+  <span>id: {{ daydetail.day.id }}</span> | <span>well_registered: {{ daydetail.day.well_registered }}</span>
+</div>
+
+<table class="table ngp-table">
+  <thead>
+    <th>Timekey</th>
+    <th>o</th>
+    <th>d</th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="od in daydetail.ods">
+      <td>{{ od.timekey }}</td>
+      <td>{{ od.o }}</td>
+      <td>{{ od.d }}</td>
+    </tr>
+  </tbody>
+</table>
