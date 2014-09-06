@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="es-ES">
+<html lang="es-ES" ng-app="app" ng-controller="MainCtrl">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>pnp anglais</title>
+    <title>{{ Page.title() }}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Coloca favicon.ico y apple-touch-icon(s) en el directorio raíz -->
@@ -19,7 +19,7 @@
 
     <!-- endbuild -->
   </head>
-  <body class="ngp" ng-app="app">
+  <body class="ngp">
     <!--[if lt IE 8]>
         <p class="browsehappy">
         Estás usando un navegador <strong>desactualizado</strong>.
@@ -29,7 +29,7 @@
     <![endif]-->
     <div class="container col-xs-12 col-sm-5 col-md-5">
       
-      <h1>Weeks</h1>
+      <h1>{{ Page.title() }}</h1>
       <div>Today is</div>
       
       <div>

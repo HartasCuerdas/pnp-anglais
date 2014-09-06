@@ -8,7 +8,8 @@
     .factory('Week', Week)
     .factory('Days', Days)
     .factory('Day', Day)
-    .factory('Ods', Ods);
+    .factory('Ods', Ods)
+    .factory('Page', Page);
 
   /* @ngInject */
   function Week ($resource, BaseUrl) {
@@ -36,6 +37,15 @@
     return $resource(BaseUrl + '/days/:id/ods.json',
       { id: '@_id' }
     );
+  }
+
+  /* @ngInject */
+  function Page() {
+    var title = 'pnp Anglais';
+    return {
+      title: function() { return title; },
+      setTitle: function(newTitle) { title = newTitle; }
+    };
   }
 
 })();

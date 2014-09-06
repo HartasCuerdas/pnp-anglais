@@ -7,15 +7,18 @@
     .controller('WeekListCtrl', WeekListCtrl)
     .controller('WeekDetailCtrl', WeekDetailCtrl)
     .controller('WeekDeleteCtrl', WeekDeleteCtrl)
-    .controller('DayDetailCtrl', DayDetailCtrl);
+    .controller('DayDetailCtrl', DayDetailCtrl)
+    .controller('MainCtrl', MainCtrl);
 
   /* @ngInject */
-  function WeekListCtrl (Week) {
+  function WeekListCtrl (Week, $scope, Page) {
+    Page.setTitle('Weeks');
     this.weeks = Week.query();
   }
 
   /* @ngInject */
-  function WeekDetailCtrl ($routeParams, Week, Days) {
+  function WeekDetailCtrl ($routeParams, Week, Days, $scope, Page) {
+    Page.setTitle('Week');
     this.week = Week.get({ id: $routeParams.id });
     this.days = Days.query({ id: $routeParams.id });
   }
@@ -26,9 +29,15 @@
   }
 
   /* @ngInject */
-  function DayDetailCtrl ($routeParams, Day, Ods) {
+  function DayDetailCtrl ($routeParams, Day, Ods, $scope, Page) {
+    Page.setTitle('Day');
     this.day = Day.get({ id: $routeParams.id });
     this.ods = Ods.query({ id: $routeParams.id });
+  }
+
+  /* @ngInject */
+  function MainCtrl ($scope, Page) {
+    $scope.Page = Page;
   }
 
 })();
