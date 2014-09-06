@@ -6,28 +6,29 @@
     .module('app.controllers', ['app.services'])
     .controller('WeekListCtrl', WeekListCtrl)
     .controller('WeekDetailCtrl', WeekDetailCtrl)
-    .controller('WokCtrl', WokCtrl)
-    .controller('WeekDeleteCtrl', WeekDeleteCtrl);
+    .controller('WeekDeleteCtrl', WeekDeleteCtrl)
+    .controller('DayDetailCtrl', DayDetailCtrl);
 
   /* @ngInject */
-  function WeekListCtrl (Weeks) {
-    this.weeks = Weeks.query();
+  function WeekListCtrl (Week) {
+    this.weeks = Week.query();
   }
 
   /* @ngInject */
-  function WeekDetailCtrl ($routeParams, Weeks) {
-    this.week = Weeks.get({ id: $routeParams.id });
+  function WeekDetailCtrl ($routeParams, Week, Days) {
+    this.week = Week.get({ id: $routeParams.id });
+    this.days = Days.query({ id: $routeParams.id });
   }
 
   /* @ngInject */
-  function WeekDeleteCtrl ($routeParams, Weeks) {
-    Weeks.remove({ id: $routeParams.id });
+  function WeekDeleteCtrl ($routeParams, Week) {
+    Week.remove({ id: $routeParams.id });
   }
 
   /* @ngInject */
-  function WokCtrl ($routeParams, Wok) {
-    Wok.delete({ id: $routeParams.id, authenticity_token: 'T/zjNTdVoWGocrCbEylftiIU4Uc+q5ZtTZaoOH35gqc=', _method: 'delete' });
+  function DayDetailCtrl ($routeParams, Day, Ods) {
+    this.day = Day.get({ id: $routeParams.id });
+    this.ods = Ods.query({ id: $routeParams.id });
   }
-
 
 })();
