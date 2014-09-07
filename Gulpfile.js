@@ -99,7 +99,7 @@ gulp.task('templates', function() {
   gulp.src('./app/views/**/*.tpl.html')
     .pipe(templateCache({
       root: 'views/',
-      module: 'blog.templates',
+      module: 'app.templates',
       standalone: true
     }))
     .pipe(gulp.dest('./app/scripts'));
@@ -119,7 +119,7 @@ gulp.task('compress', function() {
 gulp.task('uncss', function() {
   gulp.src('./dist/css/style.min.css')
     .pipe(uncss({
-      html: ['./app/index.html', './app/views/post-list.tpl.html', './app/views/post-detail.tpl.html']
+      html: ['./app/index.html', './app/views/week-list.tpl.html', './app/views/week-detail.tpl.html', './app/views/day-detail.tpl.html']
     }))
     .pipe(gulp.dest('./dist/css'));
 });
