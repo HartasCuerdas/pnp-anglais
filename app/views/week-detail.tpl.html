@@ -7,6 +7,33 @@
   comment: {{ weekdetail.week.comment }}
 </div>
 
+<table id="ngp-stats-table" class="table ngp-table">
+  <thead>
+    <tr>
+      <th>Stats</th>
+      <th>O</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AVG</td>
+      <td id="pnpC-oAVG">{{ weekdetail.week.oAVG | number: 1 }}</td>
+      <td id="pnpC-dAVG">{{ weekdetail.week.dAVG | number: 1 }}</td>
+    </tr>
+    <tr>
+      <td>MAX</td>
+      <td id="pnpC-oMAX">{{ weekdetail.week.oMAX }}</td>
+      <td id="pnpC-dMAX">{{ weekdetail.week.dMAX }}</td>
+    </tr>
+    <tr>
+      <td>MIN</td>
+      <td id="pnpC-oMIN">{{ weekdetail.week.oMIN }}</td>
+      <td id="pnpC-dMIN">{{ weekdetail.week.dMIN }}</td>
+    </tr>
+  </tbody>
+</table>
+
 <table class="table ngp-table">
   <thead>
     <th>Day</th>
