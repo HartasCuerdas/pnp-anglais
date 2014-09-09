@@ -8,6 +8,7 @@
     .factory('Week', Week)
     .factory('Days', Days)
     .factory('Day', Day)
+    .factory('DayToggleWr', DayToggleWr)
     .factory('Ods', Ods)
     .factory('Page', Page);
 
@@ -29,6 +30,15 @@
   function Day ($resource, BaseUrl) {
     return $resource(BaseUrl + '/days/:id.json',
       { id: '@_id' }
+    );
+  }
+
+  /* @ngInject */
+  function DayToggleWr ($resource, BaseUrl) {
+    return $resource(BaseUrl + '/days/:id/toggle_wr.json',
+      { id: '@id' }, {
+        toggleWr: {method:'PUT'}
+      }
     );
   }
 
