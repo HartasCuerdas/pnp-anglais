@@ -8,9 +8,6 @@
 
   /* @ngInject */
   function config ($locationProvider, $routeProvider) {
-    //var authToken = "T/zjNTdVoWGocrCbEylftiIU4Uc+q5ZtTZaoOH35gqc=";
-    //$httpProvider.defaults.headers.post['X-CSRF-Token'] = authToken;
-    //$httpProvider.defaults.headers.post['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
 
     $locationProvider.html5Mode(true);
 
