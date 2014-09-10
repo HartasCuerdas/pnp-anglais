@@ -17,10 +17,15 @@
   }
 
   /* @ngInject */
-  function WeekDetailCtrl ($routeParams, Week, Days, $scope, Page) {
+  function WeekDetailCtrl ($routeParams, Week, Days, DayToggleWr, $scope, Page) {
     Page.setTitle('Week');
     this.week = Week.get({ id: $routeParams.id });
     this.days = Days.query({ id: $routeParams.id });
+    
+    $scope.togglewr = function(day_id) {
+      DayToggleWr.toggleWr({ id: day_id });
+    }
+
   }
 
   /* @ngInject */
