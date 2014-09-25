@@ -41,11 +41,6 @@
   }
 
   /* @ngInject */
-  function DayToggleWrCtrl ($routeParams, DayToggleWr) {
-    DayToggleWr.toggleWr({ id: $routeParams.id }); 
-  }
-
-  /* @ngInject */
   function MainCtrl ($scope, Page) {
     $scope.Page = Page;
   }
