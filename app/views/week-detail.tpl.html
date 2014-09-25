@@ -46,7 +46,7 @@
       <td><a class="btn btn-default" href="day/{{day.id}}">{{ day.date }}</a></td>
       <td>{{ day.oTotal }}</td>
       <td>{{ day.dTotal }}</td>
-      <td><span class="btn ngp-day-wr-btn {{ (day.well_registered) ? 'btn-success' : 'btn-default' }}" ng-click="togglewr(day.id)">{{ day.well_registered }}</span></td>
+      <td><span class="btn ngp-day-wr-btn {{ (day.well_registered) ? 'btn-success' : 'btn-default' }}" ng-click="togglewr(day.id, $index)">{{ day.well_registered }}</span></td>
     </tr>
   </tbody>
 </table>
