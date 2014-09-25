@@ -37,7 +37,7 @@
   function DayToggleWr ($resource, BaseUrl) {
     return $resource(BaseUrl + '/days/:id/toggle_wr.json',
       { id: '@id' }, {
-        toggleWr: {method:'PUT'}
+        toggleWr: {method:'PATCH'}
       }
     );
   }
