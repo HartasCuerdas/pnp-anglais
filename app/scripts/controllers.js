@@ -33,6 +33,8 @@
           });
     };
 
+    $scope.currentDate = new Date();
+
   }
 
   /* @ngInject */
