@@ -10,7 +10,7 @@
       <td class="{{ ( week.firstDay | date: 'yyyy-MM-dd' ) == ( currentWeekFirstDayDate | date: 'yyyy-MM-dd' ) ? 'pnpC-is-current-week' : '' }}"><a class="btn btn-default" href="{{week.id}}">{{ week.firstDay | date: 'MMM dd' }}</a></td>
       <td>{{ week.oAVG | number: 1 }}</td>
       <td>{{ week.dAVG | number: 1 }}</td>
-      <td><a href="#">Destroy</a></td>
+      <td><a href="#" ng-click="destroyWeek(week.id)">Destroy</a></td>
     </tr>
   </tbody>
 </table>
