@@ -24,6 +24,11 @@
 
     $scope.currentWeekFirstDayDate = currentWeekFirstDayDate();
 
+    $scope.destroyWeek = function(weekId, position) {
+      Week.delete({ id: weekId});
+      $scope.weeklist.weeks.splice(position, 1);
+    }
+
   }
 
   /* @ngInject */
