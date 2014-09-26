@@ -24,6 +24,16 @@
 
     $scope.currentWeekFirstDayDate = currentWeekFirstDayDate();
 
+    $scope.createWeek = function() {
+      var week = new Week();
+      week.$save(
+        {},
+        function(){
+          $scope.weeklist.weeks.push(week);    
+        }
+      );
+    }
+
     $scope.destroyWeek = function(weekId, position) {
       Week.delete(
         { id: weekId },
