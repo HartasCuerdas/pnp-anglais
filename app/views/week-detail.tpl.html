@@ -43,7 +43,7 @@
   </thead>
   <tbody>
     <tr ng-repeat="day in weekdetail.days">
-      <td class="{{ ( day.date | date: 'yyyy-MM-dd' ) == ( currentDate | date: 'yyyy-MM-dd' ) ? 'pnpC-is-current-day' : '' }}"><a class="btn btn-default" href="day/{{day.id}}">{{ day.date }}</a></td>
+      <td class="{{ ( day.date | date: 'yyyy-MM-dd' ) == ( currentDate | date: 'yyyy-MM-dd' ) ? 'pnpC-is-current-day' : '' }}"><a class="btn btn-default" href="day/{{day.id}}">{{ day.date | date: 'MMM dd'}}</a></td>
       <td>{{ day.oTotal }}</td>
       <td>{{ day.dTotal }}</td>
       <td><span class="btn ngp-day-wr-btn {{ (day.well_registered) ? 'btn-success' : 'btn-default' }}" ng-click="togglewr(day.id, $index)">{{ day.well_registered }}</span></td>
