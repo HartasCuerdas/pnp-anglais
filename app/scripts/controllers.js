@@ -6,7 +6,6 @@
     .module('app.controllers', ['app.services'])
     .controller('WeekListCtrl', WeekListCtrl)
     .controller('WeekDetailCtrl', WeekDetailCtrl)
-    .controller('WeekDeleteCtrl', WeekDeleteCtrl)
     .controller('DayDetailCtrl', DayDetailCtrl)
     .controller('MainCtrl', MainCtrl);
 
@@ -64,11 +63,6 @@
 
     $scope.currentDate = new Date();
 
-  }
-
-  /* @ngInject */
-  function WeekDeleteCtrl ($routeParams, Week) {
-    Week.remove({ id: $routeParams.id });
   }
 
   /* @ngInject */
