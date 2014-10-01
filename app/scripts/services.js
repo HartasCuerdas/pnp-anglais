@@ -10,8 +10,7 @@
     .factory('DayToggleWr', DayToggleWr)
     .factory('Ods', Ods)
     .factory('OdToggleO', OdToggleO)
-    .factory('OdToggleD', OdToggleD)
-    .factory('Page', Page);
+    .factory('OdToggleD', OdToggleD);
 
   /* @ngInject */
   function Week ($resource, BaseUrl) {
@@ -66,14 +65,6 @@
         toggle_d: {method:'PATCH'}
       }
     );
-  }
-
-  function Page() {
-    var title = 'pnp Anglais';
-    return {
-      title: function() { return title; },
-      setTitle: function(newTitle) { title = newTitle; }
-    };
   }
 
 })();
