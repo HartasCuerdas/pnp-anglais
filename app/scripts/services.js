@@ -68,8 +68,7 @@
       }
     );
   }
-
-  /* @ngInject */
+  
   function Page() {
     var title = 'pnp Anglais';
     return {
