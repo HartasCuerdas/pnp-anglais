@@ -3,7 +3,6 @@
   /* @ngInject */
   angular
     .module('app.services', ['ngResource'])
-    /*.constant('BaseUrl', 'http://jsonplaceholder.typicode.com')*/
     .constant('BaseUrl', 'http://localhost:3000')
     .factory('Week', Week)
     .factory('Days', Days)
@@ -68,7 +67,7 @@
       }
     );
   }
-  
+
   function Page() {
     var title = 'pnp Anglais';
     return {
