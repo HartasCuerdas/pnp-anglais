@@ -6,4 +6,4 @@ dist
 
 app/stylesheets/main.css
 
-app/scripts/templates.js
+app/templates.js
