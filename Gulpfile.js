@@ -119,7 +119,7 @@ gulp.task('compress', function() {
 gulp.task('uncss', function() {
   gulp.src('./dist/css/style.min.css')
     .pipe(uncss({
-      html: ['./app/index.html', './app/views/week-list.tpl.html', './app/views/week-detail.tpl.html', './app/views/day-detail.tpl.html']
+      html: ['./app/index.html', './app/weeks/week-list.tpl.html', './app/weeks/week-detail.tpl.html', './app/days/day-detail.tpl.html']
     }))
     .pipe(gulp.dest('./dist/css'));
 });
