@@ -46,7 +46,7 @@ gulp.task('server-dist', function() {
 
 // Busca errores en el JS y nos los muestra por pantalla
 gulp.task('jshint', function() {
-  return gulp.src('./app/scripts/**/*.js')
+  return gulp.src(['./app/**/*.js', '!./app/lib/**'])
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(jshint.reporter('fail'));
@@ -71,7 +71,7 @@ gulp.task('html', function() {
 gulp.task('inject', function() {
   return gulp.src('index.html', {cwd: './app'})
     .pipe(inject(
-      gulp.src(['./app/scripts/**/*.js']).pipe(angularFilesort()), {
+      gulp.src(['./app/**/*.js', '!./app/lib/**']).pipe(angularFilesort()), {
       read: false,
       ignorePath: '/app'
     }))
@@ -96,13 +96,13 @@ gulp.task('wiredep', function () {
 // Compila las plantillas HTML parciales a JavaScript
 // para ser inyectadas por AngularJS y minificar el código
 gulp.task('templates', function() {
-  gulp.src('./app/**/*.tpl.html')
+  gulp.src(['./app/**/*.tpl.html', '!./app/lib/**'])
     .pipe(templateCache({
       root: '/',
       module: 'app.templates',
       standalone: true
     }))
-    .pipe(gulp.dest('./app/scripts'));
+    .pipe(gulp.dest('./app'));
 });
 
 // Comprime los archivos CSS y JS enlazados en el index.html
@@ -139,7 +139,7 @@ gulp.task('copy', function() {
 gulp.task('watch', function() {
   gulp.watch(['./app/**/*.html'], ['html', 'templates']);
   gulp.watch(['./app/stylesheets/**/*.styl'], ['css', 'inject']);
-  gulp.watch(['./app/scripts/**/*.js', './Gulpfile.js'], ['jshint', 'inject']);
+  gulp.watch(['./app/**/*.js', '!./app/lib/**', './Gulpfile.js'], ['jshint', 'inject']);
   gulp.watch(['./bower.json'], ['wiredep']);
 });
 
