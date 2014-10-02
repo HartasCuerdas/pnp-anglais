@@ -1,0 +1,29 @@
+{
+	"folders":
+	[
+    {
+      "file_exclude_patterns":
+      [
+        "pnp-anglais.sublime-project",
+        "README.md",
+        "Gulpfile.js",
+        ".bowerrc",
+        ".editorconfig",
+        ".gitignore",
+        ".jshintrc",
+        ".travis.yml",
+        "bower.json",
+        "LICENSE",
+        "package.json",
+        "pnp-anglais.sublime-workspace"
+      ],
+      "folder_exclude_patterns":
+      [
+        "node_modules",
+        "dist",
+        "app/lib"
+      ],
+			"path": "/Users/francocedillo/files/projects/angularjs/pnp-anglais"
+		}
+	]
+}
