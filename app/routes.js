@@ -11,8 +11,8 @@
 
     $routeProvider
       .when('/', {
-        templateUrl: '/weeks/week-list.tpl.html',
-        controller: 'WeekListCtrl',
+        templateUrl: '/weeks/weeks.tpl.html',
+        controller: 'WeeksCtrl',
         controllerAs: 'weeklist'
       })
       .when('/:id', {
