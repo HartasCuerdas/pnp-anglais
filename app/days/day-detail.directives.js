@@ -43,12 +43,7 @@
           (OdToggleO.toggle_o({ id: scope.od.id }))
             .$promise
               .then(function(data) {
-                scope.od.o = !scope.od.o;
-                if (scope.od.o == true) {
-                  scope.day.oTotal += 1;
-                } else {
-                  scope.day.oTotal -= 1;
-                };
+                updateO(scope.od, scope.day);
               })
               .catch(function(response) {
                 console.log(response);
@@ -71,18 +66,31 @@
           (OdToggleD.toggle_d({ id: scope.od.id }))
             .$promise
               .then(function(data) {
-                scope.od.d = !scope.od.d;
-                if (scope.od.d == true) {
-                  scope.day.dTotal += 1;
-                } else {
-                  scope.day.dTotal -= 1;
-                };
+                updateD(scope.od, scope.day);
               })
               .catch(function(response) {
                 console.log(response);
               });
         });
       }
+    }
+  }
+
+  function updateO(od, day) {
+    od.o = !od.o;
+    if (od.o == true) {
+      day.oTotal += 1;
+    } else {
+      day.oTotal -= 1;
+    }
+  }
+
+  function updateD(od, day) {
+    od.d = !od.d;
+    if (od.d == true) {
+      day.dTotal += 1;
+    } else {
+      day.dTotal -= 1;
     }
   }
 
