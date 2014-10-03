@@ -4,7 +4,8 @@
   /* @ngInject */
   angular
     .module('app.controllers')
-    .directive('pnpWeekCreate', ['Week', pnpWeekCreate]);
+    .directive('pnpWeekCreate', ['Week', pnpWeekCreate])
+    .directive('pnpWeekDestroy', ['Week', pnpWeekDestroy]);
 
   /* @ngInject */
   function pnpWeekCreate(Week) {
@@ -20,6 +21,28 @@
             {},
             function(){
               scope.weeks.push(week);    
+            }
+          );
+        });
+      }
+    }
+  }
+
+  /* @ngInject */
+  function pnpWeekDestroy(Week) {
+    return {
+      scope: {
+        week: '=pnpWeekDestroy',
+        weeks: '=pnpWeeks',
+        index: '=pnpRowIndex'
+      },
+      restrict: "A",
+      link: function(scope, element, attrs ) {
+        element.bind("click", function() {
+          Week.delete(
+            { id: scope.week.id },
+            function() {
+              scope.weeks.splice(scope.index, 1);
             }
           );
         });
