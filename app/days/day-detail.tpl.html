@@ -1,7 +1,7 @@
 <a href="/{{ daydetail.day.week_id }}" class="btn btn-primary">Back</a>
 
 <div>
-  oTotal: <span id="ngp-oTotal">{{ daydetail.day.oTotal }}</span>, dTotal: <span id="ngp-dTotal">{{ daydetail.day.dTotal }}</span> | <span>well_registered: {{ daydetail.day.well_registered }}</span>
+  oTotal: <span id="ngp-oTotal">{{ daydetail.day.oTotal }}</span>, dTotal: <span id="ngp-dTotal">{{ daydetail.day.dTotal }}</span> | <span class="btn ngp-day-wr-btn {{ (daydetail.day.well_registered) ? 'btn-success' : 'btn-default' }}" pnp-toggle-wr pnp-day="daydetail.day">{{ daydetail.day.well_registered }}</span>
 </div>
 
 <table class="table ngp-table">
@@ -13,8 +13,8 @@
   <tbody>
     <tr ng-repeat="od in daydetail.ods">
       <td>{{ od.timekey }}</td>
-      <td><span class="btn ngp-od-enabled-btn {{ (od.o) ? 'btn-success' : 'btn-default' }}" ng-click="toggle_o(od.id, $index)">{{ od.o }}</span></td>
-      <td><span class="btn ngp-od-enabled-btn {{ (od.d) ? 'btn-success' : 'btn-default' }}" ng-click="toggle_d(od.id, $index)">{{ od.d }}</span></td>
+      <td><span class="btn ngp-od-enabled-btn {{ (od.o) ? 'btn-success' : 'btn-default' }}" pnp-toggle-o pnp-od="od" pnp-day="daydetail.day">{{ od.o }}</span></td>
+      <td><span class="btn ngp-od-enabled-btn {{ (od.d) ? 'btn-success' : 'btn-default' }}" pnp-toggle-d pnp-od="od" pnp-day="daydetail.day">{{ od.d }}</span></td>
     </tr>
   </tbody>
 </table>
