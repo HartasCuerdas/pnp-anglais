@@ -1,7 +1,9 @@
-<a href="/{{ daydetail.day.week_id }}" class="btn btn-primary">Back</a>
-
 <div>
   oTotal: <span id="ngp-oTotal">{{ daydetail.day.oTotal }}</span>, dTotal: <span id="ngp-dTotal">{{ daydetail.day.dTotal }}</span> | <span class="btn ngp-day-wr-btn {{ (daydetail.day.well_registered) ? 'btn-success' : 'btn-default' }}" pnp-toggle-wr="daydetail.day">{{ daydetail.day.well_registered }}</span>
+  <div>
+    <a href="/{{ daydetail.day.week_id }}" class="btn btn-primary">Back</a>
+  </div>
+  <div>
 </div>
 
 <table class="table ngp-table">
