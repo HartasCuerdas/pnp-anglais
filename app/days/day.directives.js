@@ -22,7 +22,7 @@
                 if (attrs.pnpWeek) {
                   scope.week = data['week'];
                 }
-                scope.day.well_registered = !scope.day.well_registered;
+                scope.day.wr = !scope.day.wr;
               })
               .catch(function(response) {
                 console.log(response);

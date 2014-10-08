@@ -46,7 +46,7 @@
       <td class="{{ ( day.date | date: 'yyyy-MM-dd' ) == ( currentDate | date: 'yyyy-MM-dd' ) ? 'pnpC-is-current-day' : '' }}"><a class="btn btn-default" href="day/{{day.id}}">{{ day.date | date: 'EEE, MMM dd'}}</a></td>
       <td>{{ day.oTotal }}</td>
       <td>{{ day.dTotal }}</td>
-      <td><span class="btn ngp-day-wr-btn {{ (day.well_registered) ? 'btn-success' : 'btn-default' }}" pnp-toggle-wr="day" pnp-week="weekdetail.week">{{ day.well_registered }}</span></td>
+      <td><span class="btn ngp-day-wr-btn {{ (day.wr) ? 'btn-success' : 'btn-default' }}" pnp-toggle-wr="day" pnp-week="weekdetail.week">{{ day.wr }}</span></td>
     </tr>
   </tbody>
 </table>
