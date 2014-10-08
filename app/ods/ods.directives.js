@@ -21,7 +21,7 @@
             .$promise
               .then(function(data) {
                 scope.od.o = !scope.od.o;
-                scope.day = data;
+                scope.day = data['day'];
               })
               .catch(function(response) {
                 console.log(response);
@@ -45,7 +45,7 @@
             .$promise
               .then(function(data) {
                 scope.od.d = !scope.od.d;
-                scope.day = data;
+                scope.day = data['day'];
               })
               .catch(function(response) {
                 console.log(response);
