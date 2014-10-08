@@ -20,7 +20,7 @@
             .$promise
               .then(function(data) {
                 if (attrs.pnpWeek) {
-                  scope.week = data;
+                  scope.week = data['week'];
                 }
                 scope.day.well_registered = !scope.day.well_registered;
               })
